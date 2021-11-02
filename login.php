@@ -2,6 +2,7 @@
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['loginname'])) {
     $_SESSION['loginname'] = $_POST['loginname'];
+    $_SESSION['cart'] = [];
     header('Location: index.php');
     exit;
 }

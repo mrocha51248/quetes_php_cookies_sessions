@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+session_start();
+if (isset($_GET['add_to_cart']) && isset($_SESSION['cart'])) {
+    $_SESSION['cart'][$_GET['add_to_cart']] = ($_SESSION['cart'][$_GET['add_to_cart']] ?? 0) + 1;
+}
+?>
 <?php require 'inc/data/products.php'; ?>
 <?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
