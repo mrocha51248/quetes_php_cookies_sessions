@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['loginname'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
 <?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
     <div class="row">

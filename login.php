@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['loginname'])) {
+    $_SESSION['loginname'] = $_POST['loginname'];
+    header('Location: index.php');
+    exit;
+}
+?>
 <?php require 'inc/head.php'; ?>
 <div class="container" style="margin-top:40px">
     <div class="row">
